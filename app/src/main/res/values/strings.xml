@@ -1,6 +1,10 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">Day02_LXC</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+=======
+    <string name="app_name">Day03</string>
+>>>>>>> d5e5ae3f1f7b242814cdeaa5f8cc5722da8a4ec5
 </resources>
