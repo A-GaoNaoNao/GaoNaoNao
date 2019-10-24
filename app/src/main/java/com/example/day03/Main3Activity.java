@@ -30,7 +30,7 @@ public class Main3Activity extends AppCompatActivity {
     private void initView() {
         iv = findViewById(R.id.iv_san);
         tv_title = findViewById(R.id.tv_san);
-        //webview = findViewById(R.id.web);
+        webview = findViewById(R.id.web);
 
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
@@ -38,7 +38,7 @@ public class Main3Activity extends AppCompatActivity {
         String web = intent.getStringExtra("web");
         Glide.with(this).load(img).apply(RequestOptions.bitmapTransform(new CircleCrop())).into(iv);
         tv_title.setText(title);
-        /*webview.loadUrl(web);
-        webview.setWebViewClient(new WebViewClient());*/
+        webview.loadUrl(web);
+        webview.setWebViewClient(new WebViewClient());
     }
 }
