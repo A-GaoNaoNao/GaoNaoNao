@@ -33,12 +33,21 @@ class MyadapterRecyc extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         ItemListHolder itemListHolder = (ItemListHolder) holder;
         itemListHolder.title.setText(list.get(position).getGg_title());
         Glide.with(context).load(list.get(position).getGgIma_url())
                 .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                 .into(itemListHolder.iv);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (clickler!=null){
+                    clickler.click(position);
+                }
+            }
+        });
     }
 
     @Override
@@ -53,5 +62,14 @@ class MyadapterRecyc extends RecyclerView.Adapter {
             iv = itemView.findViewById(R.id.iv_gong_er);
             title = itemView.findViewById(R.id.title_gong_er);
         }
+    }
+
+    interface Clickler{
+        void click(int index);
+    }
+    private Clickler clickler;
+
+    public void setClickler(Clickler clickler) {
+        this.clickler = clickler;
     }
 }

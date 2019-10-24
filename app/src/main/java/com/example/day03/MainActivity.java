@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements MinaView, Myadapt
         ArrayList<ItemList.HxListBeansBean> hxListBeans = (ArrayList<ItemList.HxListBeansBean>) itemList.getHxListBeans();
         hxListBeansBeans.addAll(hxListBeans);
         myadapterRecycXia.notifyDataSetChanged();
-        EventBus.getDefault().post(new EventList(itemList));
+        //EventBus.getDefault().post(new EventList(itemList));
     }
 
     @Override
