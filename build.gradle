@@ -4,19 +4,14 @@ buildscript {
     repositories {
         google()
         jcenter()
-<<<<<<< HEAD
         mavenCentral() // add repository
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.1'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
-=======
-        
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.1'
-        
->>>>>>> d5e5ae3f1f7b242814cdeaa5f8cc5722da8a4ec5
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -26,7 +21,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
     }
 }
 
