@@ -30,6 +30,7 @@ public class CangFragment extends Fragment implements MyadapterRecyc2.ClickLog {
     private List<Person> people;
     private MyadapterRecyc2 myadapterRecyc2;
     private PersonDao personDao;
+    private boolean LANJIAZAI;
 
     public CangFragment() {
         // Required empty public constructor
@@ -45,6 +46,7 @@ public class CangFragment extends Fragment implements MyadapterRecyc2.ClickLog {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        LANJIAZAI = true;
         initView(getView());
         super.onActivityCreated(savedInstanceState);
     }
@@ -62,6 +64,14 @@ public class CangFragment extends Fragment implements MyadapterRecyc2.ClickLog {
         re.setAdapter(myadapterRecyc2);
 
         myadapterRecyc2.setClickLog(this);
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser && LANJIAZAI){
+            initView(getView());
+        }
     }
 
     @Override

@@ -1,44 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-=======
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
->>>>>>> d5e5ae3f1f7b242814cdeaa5f8cc5722da8a4ec5
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     tools:context=".MainActivity">
 
 
-    <FrameLayout
-        android:id="@+id/fram"
-        android:layout_width="match_parent"
-        android:layout_above="@id/tab"
-        android:layout_height="match_parent"/>
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_above="@id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>
-=======
-    android:orientation="vertical"
-    tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/re_shang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </androidx.recyclerview.widget.RecyclerView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/re_xia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </androidx.recyclerview.widget.RecyclerView>
-</LinearLayout>
->>>>>>> d5e5ae3f1f7b242814cdeaa5f8cc5722da8a4ec5

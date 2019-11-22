@@ -1,17 +1,24 @@
 package com.example.day02_lxc;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.day02_lxc.Baen.TabList;
+import com.example.day02_lxc.adapter.MyadapterFragment;
 import com.google.android.material.tabs.TabLayout;
 
-public class MainActivity extends AppCompatActivity implements TabLayout.BaseOnTabSelectedListener {
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
 
     private TabLayout tab;
     private ShowFragment showFragment;
     private CangFragment cangFragment;
+    public ViewPager pager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,35 +30,31 @@ public class MainActivity extends AppCompatActivity implements TabLayout.BaseOnT
 
     private void initView() {
         tab = findViewById(R.id.tab);
-        tab.addTab(tab.newTab().setText("首页"));
-        tab.addTab(tab.newTab().setText("收藏"));
+        pager = findViewById(R.id.pager);
+
+        ArrayList<TabList> tabLists = new ArrayList<>();
+        tabLists.add(new TabList("我的"));
+        tabLists.add(new TabList("收藏"));
+
 
         showFragment = new ShowFragment();
         cangFragment = new CangFragment();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fram,showFragment).commit();
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(showFragment);
+        fragments.add(cangFragment);
 
-        tab.addOnTabSelectedListener(this);
-    }
+        MyadapterFragment myadapterFragment = new MyadapterFragment(getSupportFragmentManager(), fragments);
 
-    @Override
-    public void onTabSelected(TabLayout.Tab tab) {
-        int position = tab.getPosition();
-        if (position==0){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fram,showFragment).commit();
+        pager.setAdapter(myadapterFragment);
+
+        tab.setupWithViewPager(pager);
+
+        for (int i = 0; i < fragments.size(); i++) {
+            tab.getTabAt(i).setText(tabLists.get(i).getName());
         }
-        if (position == 1){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fram,cangFragment).commit();
-        }
-    }
-
-    @Override
-    public void onTabUnselected(TabLayout.Tab tab) {
 
     }
 
-    @Override
-    public void onTabReselected(TabLayout.Tab tab) {
 
-    }
 }

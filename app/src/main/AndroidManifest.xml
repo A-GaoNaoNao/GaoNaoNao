@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
     package="com.example.day02_lxc">
-
     <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".MyAppllcation"
-=======
-    package="com.example.day03">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <application
->>>>>>> d5e5ae3f1f7b242814cdeaa5f8cc5722da8a4ec5
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-=======
         <activity android:name=".Main3Activity"></activity>
         <activity android:name=".Main2Activity" />
->>>>>>> d5e5ae3f1f7b242814cdeaa5f8cc5722da8a4ec5
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
